@@ -7,6 +7,7 @@ Suite Teardown    Teardown Browser
 
 *** Test Cases ***
 Login valid
+    [Tags]    POEI20252-740
     SeConnecter
     
 

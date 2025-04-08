@@ -8,6 +8,7 @@ Suite Teardown    Teardown Browser
 
 *** Test Cases ***
 Login invalid
+    [Tags]    POEI20252-743
     Input Text    ${locateurUsername}    standard_user
     Input Text    ${locateurPassword}    secret_sauce1
     Click Element    ${locateurLogin}
