@@ -1,0 +1,2 @@
+pip install gherkin2robotframework 
+gherkin2robotframework monTest.feature
