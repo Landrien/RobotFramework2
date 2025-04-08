@@ -9,7 +9,6 @@ Suite Teardown    Teardown Browser
 
 *** Test Cases ***
 Test d'achat complet
-    [Tags]    POEI20252-785
     Se Connecter
     Ajout d'un produit au panier
     Finalisation de la commande

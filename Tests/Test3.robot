@@ -8,7 +8,6 @@ Suite Teardown    Teardown Browser
 
 *** Test Cases ***
 Test de la page panier
-    [Tags]    POEI20252-784
     SeConnecter
     Ajout d'un produit au panier
 
