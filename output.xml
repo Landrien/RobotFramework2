@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-04-08T11:53:00.075263" rpa="false" schemaversion="5">
+<suite id="s1" name="Test2" source="c:\Users\IB\Documents\RobotFramework2\Tests\Test2.robot">
+<kw name="Setup Browser" owner="browser_setup" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-08T11:53:00.288921" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
+<arg>${URL}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-04-08T11:53:00.288670" elapsed="1.457843"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-04-08T11:53:01.746831" elapsed="0.029956"/>
+</kw>
+<arg>chrome</arg>
+<status status="PASS" start="2025-04-08T11:53:00.288105" elapsed="1.488924"/>
+</kw>
+<test id="s1-t1" name="Login invalid" line="10">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-08T11:53:01.778623" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>${locateurUsername}</arg>
+<arg>standard_user</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-08T11:53:01.778181" elapsed="0.086794"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-08T11:53:01.865841" level="INFO">Typing text 'secret_sauce1' into text field 'id=password'.</msg>
+<arg>${locateurPassword}</arg>
+<arg>secret_sauce1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-08T11:53:01.865512" elapsed="0.066028"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-08T11:53:01.932396" level="INFO">Clicking element 'id=login-button'.</msg>
+<arg>${locateurLogin}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-08T11:53:01.932049" elapsed="0.055338"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locateurError}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-08T11:53:01.987912" elapsed="0.016249"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-04-08T11:53:02.011592" level="INFO">Current page contains element 'xpath=//h3[@data-test='error']'.</msg>
+<arg>${locateurError}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-04-08T11:53:02.004596" elapsed="0.007219"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-04-08T11:53:02.021169" level="INFO">Current page contains text 'Epic sadface: Username and password do not match any user in this service'.</msg>
+<arg>text=Epic sadface: Username and password do not match any user in this service</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-04-08T11:53:02.012343" elapsed="0.009022"/>
+</kw>
+<status status="PASS" start="2025-04-08T11:53:01.777147" elapsed="0.244547"/>
+</test>
+<kw name="Teardown Browser" owner="browser_setup" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-04-08T11:53:02.023375" elapsed="2.096806"/>
+</kw>
+<status status="PASS" start="2025-04-08T11:53:02.022732" elapsed="2.097668"/>
+</kw>
+<status status="PASS" start="2025-04-08T11:53:00.079287" elapsed="4.041181"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test2" id="s1" pass="1" fail="0" skip="0">Test2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

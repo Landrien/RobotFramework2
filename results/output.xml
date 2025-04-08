@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-04-08T12:12:37.985953" rpa="false" schemaversion="5">
+<suite id="s1" name="Test3" source="C:\Users\IB\Documents\RobotFramework2\Tests\Test3.robot">
+<kw name="Setup Browser" owner="browser_setup" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-08T12:12:38.190801" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
+<arg>${URL}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-04-08T12:12:38.190538" elapsed="1.339557"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-04-08T12:12:39.530308" elapsed="0.030416"/>
+</kw>
+<arg>chrome</arg>
+<status status="PASS" start="2025-04-08T12:12:38.189970" elapsed="1.370882"/>
+</kw>
+<test id="s1-t1" name="Test de la page panier" line="10">
+<kw name="SeConnecter" owner="Test1">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-08T12:12:39.562001" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>${locateurUsername}</arg>
+<arg>standard_user</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-08T12:12:39.561718" elapsed="0.080960"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-08T12:12:39.643073" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<arg>${locateurPassword}</arg>
+<arg>secret_sauce</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-08T12:12:39.642856" elapsed="0.061480"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-08T12:12:39.704795" level="INFO">Clicking element 'id=login-button'.</msg>
+<arg>${locateurLogin}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-08T12:12:39.704528" elapsed="0.075371"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locateurtitle}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-08T12:12:39.780070" elapsed="0.018794"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-04-08T12:12:39.809709" level="INFO">Current page contains text 'Products'.</msg>
+<arg>text=Products</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-04-08T12:12:39.799031" elapsed="0.010771"/>
+</kw>
+<status status="PASS" start="2025-04-08T12:12:39.561475" elapsed="0.248418"/>
+</kw>
+<kw name="Ajout d'un produit au panier" owner="Test3">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locateurtitle}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-08T12:12:39.810474" elapsed="0.009823"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-08T12:12:39.820717" level="INFO">Clicking element 'id=add-to-cart-sauce-labs-backpack'.</msg>
+<arg>${locateurAddProduct}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-08T12:12:39.820502" elapsed="0.044084"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locateurelementPanier}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-08T12:12:39.864750" elapsed="0.012366"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-04-08T12:12:39.881456" level="INFO">Current page contains element 'xpath=//a/span[@class='shopping_cart_badge']'.</msg>
+<arg>${locateurelementPanier}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-04-08T12:12:39.877282" elapsed="0.004235"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-08T12:12:39.881757" level="INFO">Clicking element 'id=shopping_cart_container'.</msg>
+<arg>${locateurPanier}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-08T12:12:39.881621" elapsed="0.041717"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-04-08T12:12:39.932223" level="INFO">Current page contains text 'Your Cart'.</msg>
+<arg>text=Your Cart</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-04-08T12:12:39.923533" elapsed="0.008779"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-04-08T12:12:39.939658" level="INFO">Current page contains element 'xpath=//div[@class='cart_item']'.</msg>
+<arg>${locateurProduct}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-04-08T12:12:39.932463" elapsed="0.007281"/>
+</kw>
+<status status="PASS" start="2025-04-08T12:12:39.810246" elapsed="0.129575"/>
+</kw>
+<status status="PASS" start="2025-04-08T12:12:39.560938" elapsed="0.379151"/>
+</test>
+<kw name="Teardown Browser" owner="browser_setup" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-04-08T12:12:39.940989" elapsed="2.108658"/>
+</kw>
+<status status="PASS" start="2025-04-08T12:12:39.940815" elapsed="2.109085"/>
+</kw>
+<status status="PASS" start="2025-04-08T12:12:37.986858" elapsed="4.063141"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test3" id="s1" pass="1" fail="0" skip="0">Test3</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
