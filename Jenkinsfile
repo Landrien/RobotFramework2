@@ -43,7 +43,7 @@ pipeline {
                 script {
                     def exportResponse = bat(
                         script: """
-                            curl -H "Content-Type: application/json" ^
+                            curl -H "Content-Type: text/xml" ^
                             -X POST -H "Authorization: Bearer ${XRAY_TOKEN}" ^
                             --data @results/output.xml ${XRAY_REPORT_JSON}
                         """,
